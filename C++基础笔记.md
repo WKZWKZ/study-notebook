@@ -18,7 +18,3 @@ float array_sum(float *values, size_t length);
 
 
 
-
-
-
-
