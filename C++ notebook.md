@@ -1,5 +1,5 @@
 
-
+## 数组
 ### 未知长度数组
 
 #### 未声明数组长度
@@ -66,4 +66,85 @@ int main() {
     float sum = array_sum(values, 4);
 }
 ```
+
+## 字符串
+### 数组风格字符串
+char类型数组
+```cpp
+char rabbit[16] = {'P', 'e', 't', 'e', 'r'};
+```
+
+求字符串长度函数
+size_t strlen(const char *str);
+注：字符串长度不等于数组长度
+```cpp
+#include <cstring>
+char rabbit[16] = {'P', 'e', 't', 'e', 'r'};
+std::cout << strlen(rabbit);
+```
+
+#### 常量字符串
+```cpp
+char name1[] = "ABCD";  // 字符串长度为4，数组长度为5（末位为0）
+char str1[] = "Hello, \0CPP";  // 字符串str1申请内存长度为12
+
+```
+
+#### 其它常用字符串函数
+
+##### copy
+char* strcpy(char* dst, const char* src);
+char* strncpy(char* dst, const char* src, size_t count);  // safer
+
+##### concatenate
+char* strcat(char* dst, const char* src);
+
+##### compare
+int strcmp(const char* lefts, const char* rights);
+
+
+### string类
+```cpp
+#include <string>
+
+std::string str1 = "Hello";  // 定义string对象
+std::string str2 = "CPP";
+std::string result = str1 + ", " + str2;  // 字符串连接
+
+result.length();  // 返回字符串长度
+str1 < str2;  // 字符串比较
+```
+
+## 结构体
+```cpp
+struct Student {
+    char name[4];
+    int born;
+    bool male;
+};
+```
+
+### union
+成员共用同一片内存
+```cpp
+union ipv4address {
+    std::uint32_t address32;
+    std::uint8_t address8[4];
+};
+// sizeof(union ipv4address) is 4
+```
+
+### enum 枚举类型
+```cpp
+enum color {
+    WHITE,
+    BLACK,
+    RED,
+    GREEN
+};
+
+enum color pen_color = RED;
+```
+
+
 
