@@ -124,7 +124,7 @@ struct Student {
 };
 ```
 
-### union
+## union 联合体
 成员共用同一片内存
 ```cpp
 union ipv4address {
@@ -134,7 +134,7 @@ union ipv4address {
 // sizeof(union ipv4address) is 4
 ```
 
-### enum 枚举类型
+## enum 枚举类型
 ```cpp
 enum color {
     WHITE,
@@ -146,5 +146,25 @@ enum color {
 enum color pen_color = RED;
 ```
 
+## typedef
+用于创建类型的别名
+```cpp
+typedef int myint;
+typedef unsigned char vec3b[3];
+typedef struct _rgb_struct {
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
+} rgb_struct;
+
+myint a = 3;
+
+unsigned char color[3];
+vec3b color = {255, 0, 255};  // 两者等价
+
+rgb_struct rgb = {0, 255, 128};
+```
+
+## 指针
 
 
