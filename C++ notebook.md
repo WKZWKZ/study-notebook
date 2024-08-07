@@ -166,5 +166,50 @@ rgb_struct rgb = {0, 255, 128};
 ```
 
 ## 指针
+指针变量中存的是一个整数，是一个地址
 
+### 结构体指针
+```cpp
+struct Student
+{
+    char name[4];
+    int born;
+    bool male;
+};
+
+Student stu = {"Yu", 2000, true};
+Student *pStu = &stu;
+
+// 查看指针的值
+printf("Address of stu: %p\n", pStu);
+std::cout << "Address of stu: " << pStu << std::endl;
+```
+
+### 指针的指针
+指针变量本质上是一个变量，也有地址，可以通过取地址运算符&，取其地址赋给一个指针变量
+
+### 常指针 const指针
+const修饰的指针变量，其指向的内容不能通过指针被修改
+```cpp
+int num = 1;
+int another = 2;
+
+const int *p1 = &num;
+*p1 = 3;  // error，不能通过p1修改num的值
+num = 3;  // 
+
+int * const p2 = &num;
+*p2 = 3;  // 
+p2 = &another;  // error，不能修改指针p2的指向
+```
+
+#### const指针常用情况
+const指针作为函数参数，在函数内部无法通过指针修改其指向的内容
+```cpp
+int foo(const char *p) {
+    // 函数内只能访问p指向内容，而不能修改
+    char *p2 = p;
+    // 无法将一个const char *的指针赋值给char *类型指针
+}
+```
 
