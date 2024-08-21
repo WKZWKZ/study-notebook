@@ -213,3 +213,34 @@ int foo(const char *p) {
 }
 ```
 
+### 数组与指针
+数组名是数组首元素的地址，可看成一个const指针
+```cpp
+Student students[128];
+Student *p0 = &students[0];
+Student *p1 = &students[1];
+Student *p2 = &students[2];
+Student *p3 = &students[3];
+Student *p4 = &students[4];
+
+printf("p0 = %p\n", p0);
+printf("p1 = %p\n", p1);
+printf("p2 = %p\n", p2);
+printf("p3 = %p\n", p3);
+printf("p4 = %p\n", p4);
+printf("%d\n", sizeof(Student));
+
+printf("&students = %p\n", &students);
+printf("students = %p\n", students);
+printf("&students[0] = %p\n", &students[0]);
+```
+
+### 指针的代数操作
+指针加1是指针往后偏移一个元素的位置，而不是一个字节的位置
+```cpp
+int numbers[4] = {0, 1, 2, 3};
+int *p = number + 1;  // p指向1
+p++;  // p指向2
+```
+
+
